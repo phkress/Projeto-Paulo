@@ -1,0 +1,51 @@
+<div class="categoryBar row">
+	<ol class="breadcrumb">
+	  <li ng-click="$ctrl.changeHide()"><a href="#" class="black">Home</a></li>
+	  <li><a class="black" href="#">{{$ctrl.tag}}</a></li>
+	</ol>
+</div>
+<div class="searchBar row">
+	<button ng-click="$ctrl.changeHide()" type="button" class="btn btn-warning navbar-btn col-md-1 col-xs-12">Voltar</button>
+	<form class="navbar-form navbar-right" role="search">
+	  <div class="input-group">
+  		<span class="input-group-addon" id="basic-addon1">
+  		  <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+  		</span>
+  		<input ng-model="filtro" type="text" class="form-control" placeholder="Buscar" aria-describedby="basic-addon1">
+	  </div>	  
+	</form>
+</div>
+<div ng-repeat="info in $ctrl.infos | filter:filtro">
+	<!-- <dir ng-if="$index%3 === 3" class="row"></dir>	 -->
+	<div class="col-md-4 ">
+		<div ng-click="$ctrl.select($index);$ctrl.initialize(info.geoResult.point.lat,info.geoResult.point.lng)" class="panel panel-default phover" >
+			<div class="panel-heading">{{info.name}}</div>	
+			<div class="panel-body">
+				<img class="img-responsive" src="{{info.img.url}}" alt="{{info.img.alt}}" title="{{info.img.title}}">
+				<p>Descrição: {{info.description.short_text}}</p>
+			</div>
+			<ul class="list-group">
+			    <li class="list-group-item">Bairro: {{info.geoResult.neighbourhood}}</li>
+				<li class="list-group-item">Indereço: {{info.geoResult.address}}</li>
+			</ul>
+		</div>
+	</div>	
+	<dir ng-if="$index%3 === 2" class="row"></dir>	
+	<div class="gv-modal" ng-show="$index == $ctrl.selected">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="panel panel-default">
+			  <div class="panel-heading">{{info.name}}
+			  <button class="fright btn btn-danger btn-xs" ng-click="$ctrl.hideModal()">
+			 	 <!-- <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span> -->X
+			  </button></div>
+			  <div class="panel-body">
+			  <iframe class="col-md-8"  height="450" frameborder="0" style="border:0" src="{{$ctrl.maps(info.geoResult.point.lat,info.geoResult.point.lng);}}" allowfullscreen> </iframe>
+			  <div class="col-md-4">
+			  <p>Um pouco mais sobre: {{info.name}}</p>
+			  <p ng-bind="info.description.text"></p>
+			  <p>Custo do local: {{info.characteristics.price}}</p>
+			  </div>
+		</div>		
+	</div>
+</div>
+</div></div>

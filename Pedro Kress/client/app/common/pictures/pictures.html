@@ -1,0 +1,12 @@
+<div class="col-xs-6 col-md-3" ng-repeat="info in $ctrl.infos">     
+    <div ng-click="$ctrl.name(info.value);$ctrl.changeHide()" class="thumbnail ">
+      <img src="{{info.url}}" alt="">
+      <div class="test">
+      	<div class="subtest dhover">
+      		<h4>{{info.nome}}</h4>
+      		<!-- <p>{{info.titulo}}</p> -->
+      	</div>        
+      </div>	
+    </div>
+  </div>
+</div>

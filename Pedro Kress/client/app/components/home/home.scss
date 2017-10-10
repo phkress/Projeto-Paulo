@@ -1,0 +1,26 @@
+@import "../../app-css-globals.scss";
+
+home {
+  display: block;
+   main{
+  	a{
+  	  color: #fff;
+  	}
+  	a:hover{
+  	  color: #ddd;
+  	}
+  }
+}
+.foto{
+  background-image: url('http://visit.rio/wp-content/uploads/2017/03/3943772853_c3be0b135a_o_1920x500_acf_cropped.jpg');
+  height: 416px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.foto p{
+  padding-top: 10%;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 600;
+  font-size: 42pt;
+}

@@ -1,0 +1,37 @@
+@import "../../app-css-globals.scss";
+
+pictures {
+  display: block;
+}
+.test{
+    width: 100%;
+    height: 100%;
+    min-height: 260px;
+    position: absolute;
+    display: table;
+    top: 0;
+    left: 0;
+    text-decoration: none;
+    padding: 4px 20px;
+}
+.subtest{
+    display: table-cell;
+    width: 100%;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 4%;
+}
+.subtest h4{
+  text-transform: uppercase;
+    /*line-height: 1.1;*/
+    color: #fff;
+    font-weight: 600;
+}
+.subtest p{
+  font-size: 16px;
+    color: #fff;
+}
+.dhover:hover{
+    opacity: 0.3;
+    background-color: black;
+}

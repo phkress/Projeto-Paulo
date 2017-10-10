@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="jumbotron">
+    <h2>Fale conosco</h2>
+    <p>Sua opinião é muito importante para nós.</p>
+  </div>
+  <div>  
+  <div class=row>
+  <div class="col-md-6">
+    <h3>Lista de telefones de contatos</h3>   
+    <p ng-repeat="contact in $ctrl.contacts">
+      <span><strong>{{contact.name}}</strong></span>
+      <span>{{contact.phone}}</span>
+    </p>
+  </div>
+  <div class="col-md-6">
+    
+  <form>
+  <div class="form-group">
+    <label for="yourEmail">Seu endereço de e-mail</label>
+    <input ng-model="$ctrl.yourEmail" type="email" class="form-control" id="yourEmail" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <label for="sugestao">Deixe sua sugestão aqui</label>    
+    <textarea ng-model="$ctrl.sugestao" class="form-control" rows="5" id="sugestao"></textarea>
+  </div>  
+  <button ng-click="$ctrl.sendEmail()" type="submit" class="btn btn-default">Enviar</button>
+  </form>
+  </div>
+  </div>
+  </div>
+</div>

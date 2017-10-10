@@ -1,0 +1,8 @@
+<div ng-show="$ctrl.display" class="foto .col-md-12 .col-xs-12 .col-sm-12 .col-lg-12">
+	<p>Bem vindo ao Rio de Janeiro!</p>
+</div>
+<main class="container">
+  <pictures ng-show="$ctrl.display" infos="$ctrl.imgList" hide="$ctrl.display" button="$ctrl.selectCategoria($event)"></pictures>
+  <generic-views ng-hide="$ctrl.display" tag="$ctrl.cat" infos="$ctrl.catList" hide="$ctrl.display"></generic-views>
+
+</main>
